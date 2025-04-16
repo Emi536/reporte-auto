@@ -7,6 +7,11 @@ from pydrive2.auth import GoogleAuth
 from pydrive2.drive import GoogleDrive
 from openpyxl import load_workbook
 
+# Guardar las credenciales en archivo físico si vienen como variable
+if os.getenv("GOOGLE_CREDS_JSON"):
+    with open("credentials.json", "w") as f:
+        f.write(os.getenv("GOOGLE_CREDS_JSON"))
+
 # Variables de entorno
 EROS_USER = os.getenv("EROS_USER")
 EROS_PASS = os.getenv("EROS_PASS")
