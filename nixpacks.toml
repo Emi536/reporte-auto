@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["python311", "openssl", "pkg-config", "libffi", "glibc", "gcc"]
+
+[phases.build]
+cmds = ["pip install --upgrade pip", "pip install -r requirements.txt"]
+
+[start]
+cmd = "playwright install && python3 main.py"
